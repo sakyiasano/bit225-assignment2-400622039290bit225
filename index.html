@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueLib Catalogue</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>BlueLib Catalogue</h1>
+            <p>BlueCrest College Library</p>
+        </div>
+    </header>
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a href="#catalogue">Catalogue</a>
+            <a href="#add-book">Add Book</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="catalogue" class="catalogue-section" aria-labelledby="catalogue-title">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Library collection</p>
+                        <h2 id="catalogue-title">Browse Books</h2>
+                    </div>
+                    <p id="book-count" class="book-count" aria-live="polite"></p>
+                </div>
+
+                <div class="filters" aria-label="Book filters">
+                    <div class="field">
+                        <label for="search-input">Search by title</label>
+                        <input
+                            type="search"
+                            id="search-input"
+                            placeholder="e.g. JavaScript"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="category-filter">Filter by category</label>
+                        <select id="category-filter">
+                            <option value="All">All Categories</option>
+                            <option value="IT">IT</option>
+                            <option value="Business">Business</option>
+                            <option value="Science">Science</option>
+                            <option value="Arts">Arts</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="book-list" class="book-grid" aria-live="polite"></div>
+                <p id="empty-message" class="empty-message" hidden>No books match your search.</p>
+            </div>
+        </section>
+
+        <section id="add-book" class="add-section" aria-labelledby="add-book-title">
+            <div class="container">
+                <div class="form-card">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">Catalogue management</p>
+                            <h2 id="add-book-title">Add Book</h2>
+                        </div>
+                    </div>
+
+                    <form id="book-form" novalidate>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="title" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="author">Author</label>
+                                <input type="text" id="author" name="author" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="category">Category</label>
+                                <select id="category" name="category" required>
+                                    <option value="">Select category</option>
+                                    <option value="IT">IT</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Science">Science</option>
+                                    <option value="Arts">Arts</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="copies">Copies Available</label>
+                                <input type="number" id="copies" name="copies" min="0" step="1" required>
+                            </div>
+                        </div>
+
+                        <p id="form-message" class="form-message" role="alert" aria-live="assertive"></p>
+                        <button type="submit" class="primary-button">Add Book</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Created by Asano Yaw Amponfi-Sakyi | Student ID: 400622039290</p>
+            <p>BIT225 Advanced Web Technologies</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
